@@ -1,0 +1,31 @@
+{
+  "name": "wmic",
+  "version": "0.0.0",
+  "description": "wmic wrapper for Node.js",
+  "keywords": [
+    "wmic",
+    "windows",
+    "management",
+    "devie"
+  ],
+  "main": "library/source/index.js",
+  "types": "library/source/index.d.ts",
+  "scripts": {
+    "test": "mocha library/test"
+  },
+  "bugs": {
+    "url": "https://github.com/wraith13/wmic-node/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wraith13/wmic-node.git"
+  },
+  "author": "wraith13",
+  "license": "BSL-1.0",
+  "devDependencies": {
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.9.4",
+    "mocha": "^5.2.0",
+    "typescript": "^3.3.3"
+  }
+}
