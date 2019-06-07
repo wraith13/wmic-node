@@ -1,409 +1,139 @@
-export module wmic
+import * as child_process from "child_process";
+
+export type command =
+    "alias" |
+    "baseboard" |
+    "bios" |
+    "bootconfig" |
+    "cdrom" |
+    "computersystem" |
+    "cpu" |
+    "csproduct" |
+    "datafile" |
+    "dcomapp" |
+    "desktop" |
+    "desktopmonitor" |
+    "devicememoryaddress" |
+    "diskdrive" |
+    "diskquota" |
+    "dmachannel" |
+    "environment" |
+    "fsdir" |
+    "group" |
+    "idecontroller" |
+    "irq" |
+    "job" |
+    "loadorder" |
+    "logicaldisk" |
+    "logon" |
+    "memcache" |
+    "memorychip" |
+    "memphysical" |
+    "netclient" |
+    "netlogin" |
+    "netprotocol" |
+    "netuse" |
+    "nic" |
+    "nicconfig" |
+    "ntdomain" |
+    "ntevent" |
+    "nteventlog" |
+    "onboarddevice" |
+    "os" |
+    "pagefile" |
+    "pagefileset" |
+    "partition" |
+    "port" |
+    "portconnector" |
+    "printer" |
+    "printerconfig" |
+    "printjob" |
+    "process" |
+    "product" |
+    "qfe" |
+    "quotasetting" |
+    "rdaccount" |
+    "rdnic" |
+    "rdpermissions" |
+    "rdtoggle" |
+    "recoveros" |
+    "registry" |
+    "scsicontroller" |
+    "server" |
+    "service" |
+    "shadowcopy" |
+    "shadowstorage" |
+    "share" |
+    "softwareelement" |
+    "softwarefeature" |
+    "sounddev" |
+    "startup" |
+    "sysaccount" |
+    "sysdriver" |
+    "systemenclosure" |
+    "systemslot" |
+    "tapedrive" |
+    "temperature" |
+    "timezone" |
+    "ups" |
+    "useraccount" |
+    "voltage" |
+    "volume" |
+    "volumequotasetting" |
+    "volumeuserquota" |
+    "wmiset";
+
+const iteratorToArray = <T>(iterator: () => T): T[] =>
 {
-    export module alias
+    const result: T[] = [];
+    let current: T;
+    while(current = iterator())
     {
-        
+        result.push(current);
     }
-
-    export module baseboard
-    {
-        
-    }
-    
-    export module bios
-    {
-        
-    }
-
-    export module bootconfig
-    {
-        
-    }
-
-    export module cdrom
-    {
-        
-    }
-
-    export module computersystem
-    {
-        
-    }
-
-    export module cpu
-    {
-        
-    }
-
-    export module csproduct
-    {
-        
-    }
-
-    export module datafile
-    {
-        
-    }
-
-    export module dcomapp
-    {
-        
-    }
-
-    export module desktop
-    {
-        
-    }
-
-    export module desktopmonitor
-    {
-        
-    }
-
-    export module devicememoryaddress
-    {
-        
-    }
-
-    export module diskdrive
-    {
-        
-    }
-
-    export module diskquota
-    {
-        
-    }
-
-    export module dmachannel
-    {
-        
-    }
-
-    export module environment
-    {
-        
-    }
-
-    export module fsdir
-    {
-        
-    }
-
-    export module group
-    {
-        
-    }
-
-    export module idecontroller
-    {
-        
-    }
-
-    export module irq
-    {
-        
-    }
-
-    export module job
-    {
-        
-    }
-
-    export module loadorder
-    {
-        
-    }
-
-    export module logicaldisk
-    {
-        
-    }
-
-    export module logon
-    {
-        
-    }
-
-    export module memcache
-    {
-        
-    }
-
-    export module memorychip
-    {
-        
-    }
-
-    export module memphysical
-    {
-        
-    }
-
-    export module netclient
-    {
-        
-    }
-
-    export module netlogin
-    {
-        
-    }
-
-    export module netprotocol
-    {
-        
-    }
-
-    export module netuse
-    {
-        
-    }
-
-    export module nic
-    {
-        
-    }
-
-    export module nicconfig
-    {
-        
-    }
-
-    export module ntdomain
-    {
-        
-    }
-
-    export module ntevent
-    {
-        
-    }
-
-    export module nteventlog
-    {
-        
-    }
-
-    export module onboarddevice
-    {
-        
-    }
-
-    export module os
-    {
-        
-    }
-
-    export module pagefile
-    {
-        
-    }
-
-    export module pagefileset
-    {
-        
-    }
-
-    export module partition
-    {
-        
-    }
-
-    export module port
-    {
-        
-    }
-
-    export module portconnector
-    {
-        
-    }
-
-    export module printer
-    {
-        
-    }
-
-    export module printerconfig
-    {
-        
-    }
-
-    export module printjob
-    {
-        
-    }
-
-    export module process
-    {
-        
-    }
-
-    export module product
-    {
-        
-    }
-
-    export module qfe
-    {
-        
-    }
-
-    export module quotasetting
-    {
-        
-    }
-
-    export module rdaccount
-    {
-        
-    }
-
-    export module rdnic
-    {
-        
-    }
-
-    export module rdpermissions
-    {
-        
-    }
-
-    export module rdtoggle
-    {
-        
-    }
-
-    export module recoveros
-    {
-        
-    }
-
-    export module registry
-    {
-        
-    }
-
-    export module scsicontroller
-    {
-        
-    }
-
-    export module server
-    {
-        
-    }
-
-    export module service
-    {
-        
-    }
-
-    export module shadowcopy
-    {
-        
-    }
-
-    export module shadowstorage
-    {
-        
-    }
-
-    export module share
-    {
-        
-    }
-
-    export module softwareelement
-    {
-        
-    }
-
-    export module softwarefeature
-    {
-        
-    }
-
-    export module sounddev
-    {
-        
-    }
-
-    export module startup
-    {
-        
-    }
-
-    export module sysaccount
-    {
-        
-    }
-
-    export module sysdriver
-    {
-        
-    }
-
-    export module systemenclosure
-    {
-        
-    }
-
-    export module systemslot
-    {
-        
-    }
-
-    export module tapedrive
-    {
-        
-    }
-
-    export module temperature
-    {
-        
-    }
-
-    export module timezone
-    {
-        
-    }
-
-    export module ups
-    {
-        
-    }
-
-    export module useraccount
-    {
-        
-    }
-
-    export module voltage
-    {
-        
-    }
-
-    export module volume
-    {
-        
-    }
-
-    export module volumequotasetting
-    {
-        
-    }
-
-    export module volumeuserquota
-    {
-        
-    }
-
-    export module wmiset
-    {
-        
-    }
-
+    return result;
 }
-export default wmic;
+const regExpExecToArray = (regexp: RegExp, text: string): RegExpExecArray[] => iteratorToArray(() => regexp.exec(text));
+
+export const get = (command: command) => new Promise<{ [key: string]: string }[]>
+(
+    (resolve, reject) => child_process.exec
+    (
+        `wmic ${command}`,
+        (error, stdout) =>
+        {
+            if (undefined !== error && null !== error)
+            {
+                reject(error);
+            }
+            else
+            {
+                const lines = stdout.replace(/\r\r\n/gm, "\r\n").split("\r\n").filter(i => 0 < i.trim().length);
+                const headers = regExpExecToArray(/\S+\s+/gm, lines[0]).map(i => i[0]);
+                const body = lines.slice(1);
+                resolve
+                (
+                    body.map
+                    (
+                        line =>
+                        {
+                            const result: { [key: string]: string } = { };
+                            let i = 0;
+                            headers.map
+                            (
+                                key =>
+                                {
+                                    result[key.trim()] = line.substr(i, key.length).trim();
+                                    i += key.length;
+                                }
+                            );
+                            return result;
+                        }
+                    )
+                );
+            }
+        }
+    )
+);
+
+export default get;

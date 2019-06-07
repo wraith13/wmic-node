@@ -1,10 +1,111 @@
 # wmic
 
-wmic wrapper for Node.js
+wmic( Windows Management Instrumentation Command-line ) wrapper for Node.js
 
 ## How to use
 
-TBD
+```typescript
+import wmic from "wmic-node";
+
+const demo = async () =>
+{
+    console.log(`wmic("cpu"): ${JSON.stringify(await wmic("cpu"), null, 4)}`);
+};
+
+demo();
+```
+
+## Reference
+
+### function
+
+```typescript
+function wmic(command: command): Promise<{ [key: string]: string }[]>;
+```
+
+### commands
+
+- `"alias"`
+- `"baseboard"`
+- `"bios"`
+- `"bootconfig"`
+- `"cdrom"`
+- `"computersystem"`
+- `"cpu"`
+- `"csproduct"`
+- `"datafile"`
+- `"dcomapp"`
+- `"desktop"`
+- `"desktopmonitor"`
+- `"devicememoryaddress"`
+- `"diskdrive"`
+- `"diskquota"`
+- `"dmachannel"`
+- `"environment"`
+- `"fsdir"`
+- `"group"`
+- `"idecontroller"`
+- `"irq"`
+- `"job"`
+- `"loadorder"`
+- `"logicaldisk"`
+- `"logon"`
+- `"memcache"`
+- `"memorychip"`
+- `"memphysical"`
+- `"netclient"`
+- `"netlogin"`
+- `"netprotocol"`
+- `"netuse"`
+- `"nic"`
+- `"nicconfig"`
+- `"ntdomain"`
+- `"ntevent"`
+- `"nteventlog"`
+- `"onboarddevice"`
+- `"os"`
+- `"pagefile"`
+- `"pagefileset"`
+- `"partition"`
+- `"port"`
+- `"portconnector"`
+- `"printer"`
+- `"printerconfig"`
+- `"printjob"`
+- `"process"`
+- `"product"`
+- `"qfe"`
+- `"quotasetting"`
+- `"rdaccount"`
+- `"rdnic"`
+- `"rdpermissions"`
+- `"rdtoggle"`
+- `"recoveros"`
+- `"registry"`
+- `"scsicontroller"`
+- `"server"`
+- `"service"`
+- `"shadowcopy"`
+- `"shadowstorage"`
+- `"share"`
+- `"softwareelement"`
+- `"softwarefeature"`
+- `"sounddev"`
+- `"startup"`
+- `"sysaccount"`
+- `"sysdriver"`
+- `"systemenclosure"`
+- `"systemslot"`
+- `"tapedrive"`
+- `"temperature"`
+- `"timezone"`
+- `"ups"`
+- `"useraccount"`
+- `"voltage"`
+- `"volume"`
+- `"volumequotasetting"`
+- `"volumeuserquota"`
+- `"wmiset"`
 
 ## How to build
 
