@@ -1,12 +1,12 @@
 {
-  "name": "wmic-node",
-  "version": "1.0.0",
+  "name": "@wraith13/wmic",
+  "version": "1.0.1",
   "description": "wmic wrapper for Node.js",
   "keywords": [
     "wmic",
     "windows",
     "management",
-    "devie"
+    "device"
   ],
   "main": "library/source/index.js",
   "types": "library/source/index.d.ts",
